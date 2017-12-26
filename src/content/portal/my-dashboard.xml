@@ -1,0 +1,109 @@
+<content>
+<div id="page-content">
+	<div class="fixed-fluid">
+		<div class="fixed-sm-200 fixed-lg-250 pull-sm-left">
+			<div class="panel widget">
+				<div class="widget-header bg-warning text-center">
+					<!--留补-->
+					<h4 class="mar-no pad-top"></h4>
+					<p class="mar-btm"></p>
+				</div>
+				<div id="pad-ver" class="widget-body">
+					<img id="im-replace" alt="Profile Picture" class="widget-img img-circle img-border-light" src="images/profile-photos/4.png"/>
+					<div class="panel-body">
+						<div id='update-photo'></div>
+					</div>
+					<div class="list-group bg-trans mar-no">
+						<a class="list-group-item list-item-sm" href="#">
+							<span class="label label-primary pull-right">0</span> 近期活动
+						</a>
+						<a class="list-group-item list-item-sm" href="#">
+							<span class="label label-danger pull-right">0</span> 相片
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="demo-bv-accordion" class="form-horizontal">
+				<div id="accordion" class="panel-group accordion">
+					<div class="panel">
+						<!-- Accordion title -->
+						<div class="panel-heading">
+							<h4 class="panel-title">
+					           <a data-parent="#accordion" data-toggle="collapse" href="#chang-password-panel">修改密码</a>
+					              </h4>
+						</div>
+
+						<!-- Accordion content -->
+						<div id="chang-password-panel" class="panel-collapse collapse">
+							<div class="panel-body">
+								<form id="upPwdForm" name="upPwdForm" class="form-horizontal mar-top">
+									<div class="panel-body">
+										<div id="ms-pwd"></div>
+										<div class="tab-pane">
+											<div class="form-group">
+												<label class="col-lg-3 control-label">旧密码</label>
+												<div class="col-lg-7">
+													<input type="password" class="form-control" name="oldPassword" placeholder="旧密码" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-lg-3 control-label">新密码</label>
+												<div class="col-lg-7">
+													<input type="password" class="form-control" name="password" placeholder="新密码" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-lg-3 control-label">再次输入密码</label>
+												<div class="col-lg-7">
+													<input type="password" class="form-control" name="verlifyPassword" placeholder="再次输入密码" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel-footer text-right">
+										<button id="btn-pwd" type="button" class="next btn btn-mint" onclick="updatepwd()">修改</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--FLUID-->
+		<div class="fluid">
+			<div class="fixed-fluid">
+				<div class="fixed-lg-300 pull-lg-right">
+					<div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="demo-pli-file-jpg icon-fw"></i>图库</h3>
+						</div>
+						<div class="panel-body">
+							<ul id="ul-img" class="list-unstyled list-inline text-justify">
+							</ul>
+							<button id="im-import" href="#" class="btn btn-sm btn-block btn-default">导入图片</button>
+							<div id="import-photo" class="pad-top"></div>
+						</div>
+					</div>
+				</div>
+				<div class="fluid">
+					<div class="panel">
+						<div class="panel-body">
+							<textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+							<div class="mar-top clearfix">
+								<button class="btn btn-sm btn-primary pull-right" type="submit"><i class="demo-psi-right-4 icon-fw"></i>发表</button>
+								<a class="btn btn-trans btn-icon demo-pli-video icon-lg add-tooltip" href="#" data-original-title="Add Video" data-toggle="tooltip"></a>
+								<a class="btn btn-trans btn-icon demo-pli-camera-2 icon-lg add-tooltip" href="#" data-original-title="Add Photo" data-toggle="tooltip"></a>
+								<a class="btn btn-trans btn-icon demo-pli-file icon-lg add-tooltip" href="#" data-original-title="Add File" data-toggle="tooltip"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/fluid-->
+	</div>
+</div>
+</content>

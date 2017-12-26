@@ -1,0 +1,16 @@
+<content>
+	<div id="page-content">
+		<div id="sys-setting" class="col-lg-12">
+			<div class="panel" id="grid">
+				<div class="panel-heading">
+					<h3 class="panel-title">导入EXECl</h3>
+				</div>
+				<div class="panel-body">
+					<div class="file-loading">
+						<input id="xlf" name="xlfile" type="file"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</content>

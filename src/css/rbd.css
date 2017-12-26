@@ -1,0 +1,26 @@
+#content-container {
+	background-color: transparent;
+}
+
+#login-register {
+	display: none;
+	background-color: transparent;
+	border: 0;
+	position: absolute;
+	z-index: 999;
+	top: 5px;
+	left: 0px;
+	right: 0px;
+}
+
+#navbar,
+#aside-container,
+#mainnav-container {
+	display: none;
+}
+
+.login #navbar,
+.login #aside-container,
+.login #mainnav-container {
+	display: block;
+}

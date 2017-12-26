@@ -1,0 +1,14 @@
+<content>
+<div class="panel">
+	<div class="panel-heading">
+		<!--标题-->
+		<h3 class="panel-title"></h3>
+	</div>
+	<div id="panel-body" class="panel-body">
+		<!--<div class="btn-group" id="toolbar">
+			<button id="add-row" class="btn btn-danger" disabled><i class="fa fa-remove"></i> 添加用户</button>
+		</div>-->
+		<table id="table"></table>
+	</div>
+</div>
+</content>

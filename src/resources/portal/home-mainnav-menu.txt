@@ -1,0 +1,51 @@
+<li class="list-header">导航</li>
+<li>
+	<a href="/home">
+		<i class="ion-ios-home-outline"></i>
+		<span class="menu-title">
+			<strong>首页</strong>
+		</span>
+	</a>
+</li>
+
+<li>
+	<a href="/userManage">
+		<i class="demo-pli-information icon-lg icon-fw"></i>
+		<span class="menu-title">
+			<strong>用户管理</strong>
+		</span>
+	</a>
+</li>
+
+<li>
+	<a href="/setting">
+		<i class="ion-ios-settings"></i>
+		<span class="menu-title">
+			<strong>系统设置</strong>
+		</span>
+	</a>
+</li>
+<li>
+	<a href="/company">
+		<i class="ion-ios-briefcase-outline"></i>
+		<span class="menu-title">
+			<strong>公司管理</strong>
+		</span>
+	</a>
+</li>
+<li>
+	<a href="/organization">
+		<i class="ion-ios-briefcase-outline"></i>
+		<span class="menu-title">
+			<strong>组织管理</strong>
+		</span>
+	</a>
+</li>
+<li>
+	<a href="/mysql">
+		<i class="ion-ios-briefcase-outline"></i>
+		<span class="menu-title">
+			<strong>mysql测试</strong>
+		</span>
+	</a>
+</li>

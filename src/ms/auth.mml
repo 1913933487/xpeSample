@@ -1,0 +1,27 @@
+<ms domain="auth">
+
+ 	<!--用户-->
+    <topic name="users" primaryKey="id" storeType="binary" seqKey="true"
+    	secret="msdemo" aesKey="3CCLut8kJhBcCQ0kKwGmSZhhIFLzm74wE7DJMv8lpII="
+		dict="id:l,username,email,name,phone,wxcpId,wxmpId,created:t,lastUpdated:t"
+	   	fields="phone,wxcpId,wxmpId">
+    	
+        <pub protocol="json"></pub>
+ 	</topic>
+
+	<!--SMS验证码-->
+    <topic name="smscode" storeType="binary" primaryKey="id"
+	    dict="id,mobile,mode:B,code,sendTime:t"
+    	fields="mobile,mode">
+        <pub protocol="json"></pub>
+    </topic>
+    
+    <topic name='auth/sms' type="http">
+        <pub src='ws/sms' protocol='http' transport="ws" handler="auth/sms"/>
+    </topic>
+
+    <handler name="auth/sms">
+        <script src="auth-sms.js"/>
+    </handler>
+
+</ms>

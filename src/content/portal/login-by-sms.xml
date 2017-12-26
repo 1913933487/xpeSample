@@ -1,0 +1,31 @@
+<content>
+<div class="cls-content">
+    <div id="content-wrapper-panel" class="cls-content-sm panel">
+		<div class="panel">
+			 	<div class="panel-body">
+				<div class="mar-ver">
+					<h3 class="h4 mar-no text-center">登录</h3>
+				</div>
+			    <div id='login-fail-alert' class='pad-btm'></div>
+				<form id="fm-login-by-sms" onsubmit="return false">
+					<div class="form-group">
+						<input type="text" name="phone" class="form-control" placeholder="手机号码" autofocus="true" />
+					</div>
+					<button id="btn-sms-code" class="btn btn-block btn-default mar-btm">获取验证码</button>
+					<div class="form-group">
+						<input type="text" name="smsCode" class="form-control" placeholder="演示验证码:888888" />
+					</div>
+					<button id="btn-login" class="btn btn-primary btn-lg btn-block" type="submit">登录</button>
+				</form>
+			</div>
+			<div class="mar-all pad-lft pad-btm">
+				<a href="/register-user" class="btn-link mar-rgt">注册</a>
+				<a href="/login-by-pwd" class="btn-link mar-rgt"><i class="fa fa-lock"> 密码</i></a>
+				<a href="#" id='login-by-wx' class="btn-link mar-rgt visible-xs-inline"><i class="fa fa-wechat"> 微信</i></a>
+				<a href="/home" class="btn-link mar-rgt text-center"><i class="fa fa-home"> 返回 </i></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</content>

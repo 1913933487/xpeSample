@@ -1,0 +1,48 @@
+<ms domain="sys/init/">
+    
+    <topic name='sys/organ' type="http">
+        <pub src='ws/sys/organ' protocol='http' transport="ws" handler="sys/organ"/>
+    </topic>
+    
+    <handler name="sys/organ">
+        <script src="sys-organ.js"/>
+    </handler>
+    
+    <topic name='sys/init/region' type="http">
+        <pub src='ws/sys/init/region' protocol='http' transport="ws" handler="sys/init/region"/>
+    </topic>
+    
+    <handler name="sys/init/region">
+        <script src="sys-inti-region.js"/>
+    </handler>
+
+    <topic name='sys/init/dictionary' type="http">
+        <pub src='ws/sys/init/dictionary' protocol='http' transport="ws" handler="sys/init/dictionary"/>
+    </topic>
+    
+    <handler name="sys/init/dictionary">
+        <script src="sys-init-dictionary.js"/>
+    </handler>
+
+    <topic name='sys/init/name/mapping' type="http">
+        <pub src='ws/sys/init/name/mapping' protocol='http' transport="ws" handler="sys/init/name/mapping"/>
+    </topic>
+    
+    <handler name="sys/init/name/mapping">
+        <script src="sys-init-name-mapping.js"/>
+    </handler>
+    
+    <topic name="organ" fields="id">
+        <pub src="ws/organ" protocol="dblog" transport="ws" />
+        <sub dest="organ" protocol="json" />
+    </topic>
+    
+    <topic name="organCase" field="id">
+        <pub src="organ" protocol="json"/>
+        <sub dest="/organ/case/ws" protocol="dblog" transport="ws" />
+    </topic>
+    
+    <mapReduce name="organ">
+        <processor src="sys-organ.js" />
+    </mapReduce>
+</ms>

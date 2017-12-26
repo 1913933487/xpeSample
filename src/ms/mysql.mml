@@ -1,0 +1,9 @@
+<ms domain="sql">
+    <topic name='sqlhttp' type="http">
+        <pub src='ws/sql' protocol='http' transport="ws" handler="mysql"/>
+    </topic>
+    
+    <handler name="mysql">
+        <script src="mysql.js"/>
+    </handler>
+</ms>

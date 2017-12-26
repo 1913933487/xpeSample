@@ -1,0 +1,76 @@
+<body>
+	<div id="container" class="effect aside-float aside-bright mainnav-out" >
+
+		<div id="bg-overlay" class="bg-img" style="background-image: url(/images/bg/bg.jpg)"></div>
+		
+        <div id="login-register" class="text-center">
+            <div class="btn-group btn-rounded btn-group-md">
+ 				<a href="/login-by-pwd" class="btn btn-warning pad-lft">登录</a>
+ 				<a href="/register-user" class="btn btn-warning pad-rgt">注册</a>
+            </div>
+        </div>
+
+		<header id="navbar">
+			<div id="navbar-container" class="boxed">
+
+				<div class="navbar-header">
+				</div>
+				<div class="navbar-content clearfix">
+					<ul class="nav navbar-top-links pull-left">
+						<li class="tgl-menu-btn">
+							<a class="mainnav-toggle slide" href="#">
+								<i class="ti-view-list icon-lg"></i>
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-top-links pull-right">
+
+						<li id="dropdown-user" class="dropdown">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+								<span id="ctx-photo-top" class="pull-right">
+									<i class='ti-user text-2x'></i>
+								</span>
+							</a>
+							<div id='dropdown-user-menu' class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+							</div>
+						</li>
+						<li>
+							<a href="#" class="aside-toggle navbar-aside-icon">
+								<i class="pci-ver-dots"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="boxed">
+			<div id="content-container"></div>
+			<aside id="aside-container">
+				<div id="aside"></div>
+			</aside>
+			<nav id="mainnav-container">
+				<div id="mainnav">
+					<div id="mainnav-menu-wrap">
+						<div class="nano">
+							<div class="nano-content">
+								<div id="mainnav-profile" class="mainnav-profile">
+									<div id="profile-wrap" class="profile-wrap"></div>
+									<div id="profile-nav" class="collapse list-group bg-trans"></div>
+								</div>
+								<div id="mainnav-shortcut"></div>
+								<ul id="mainnav-menu" class="list-group">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<footer id="footer">
+			<p class="pad-lft">&#0169; 2017 Reborndragon</p>
+		</footer>
+		<button class="scroll-top btn">
+			<i class="pci-chevron chevron-up"></i>
+		</button>
+	</div>
+</body>

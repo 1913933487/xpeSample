@@ -1,0 +1,378 @@
+<site  domain="dev.test" >
+	<common>
+		<head>
+			<meta  charset="utf-8" />
+			<meta  name="viewport"  content="width=device-width, initial-scale=1" />
+			<meta  http-equiv="X-UA-Compatible"  content="IE=EDGE" />
+			<title>瑞博龙</title>
+			<link href="css/bootstrap.min.css" rel="stylesheet" />
+			<link href="css/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+			<link href="css/nifty.min.css" rel="stylesheet" />
+			<link href="css/ionicons.min.css" rel="stylesheet" />
+			<link href="css/themify-icons/themify-icons.min.css" rel="stylesheet" />
+			<link href="css/magic-check/magic-check.min.css" rel="stylesheet" />
+			<link href="css/pace.min.css" rel="stylesheet" />
+			<link href="css/rbd.css" rel="stylesheet" />
+
+			<script src="js/common/jquery-2.2.4.min.js" />
+			<script src="js/core.js" />
+			<script src="/js/sha256.js" />
+			<script src="js/login.js" />
+			<script src="js/common/bootstrap.min.js" />
+			<script src="js/rbd.js" />
+			<script src="js/common/bootbox.min.js"/>
+			<script src="js/common/nifty.min.js" />
+			<script src="js/common/pace.min.js" />
+			<script src="js/common/template-web.js" />
+			<script src="js/portal/home.js" />
+			<script src="js/dateUtil.js"/>
+			<script src="js/formUtils.js"/>
+		</head>
+	</common>
+	
+	<group id='form'>
+		<head>
+			<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+			<link href="css/bootstrapValidator.min.css" rel="stylesheet" />
+			<script src="js/common/bootstrapValidator.min.js" />
+			<script src="js/common/distpicker.data.min.js" />
+			<script src="js/common/distpicker.min.js" />
+			<script src="js/common/moment.min.js" />
+			<script src="js/common/moment-locale-zh-cn.js" />
+			<script src="js/common/bootstrap-datetimepicker.min.js" />
+			<script src="js/rbd-form-builder.js" />
+		</head>
+	</group>
+
+	<group id='table'>
+		<head>
+			<link href="css/bootstrap-table.min.css" rel="stylesheet" />
+			<script src="js/common/bootstrap-table.min.js" />
+			<script src="js/common/bootstrap-table-zh-CN.min.js" />
+			<script src="js/rbd-table-builder.js" />
+			<script src="js/rbd-grid-edit.js" />
+		</head>
+	</group>
+	
+	<group id='tree'>
+		<head>
+			<link href="css/jquery.treetable.min.css" rel="stylesheet" />
+			<script src="js/common/jquery.treetable.min.js" />
+			<script src="js/rbd-treeTable-builder.js" />
+			<script src="js/rbd-grid-edit-treeTable.js" />
+		</head>
+	</group>
+	
+	<group id='dropzone'>
+		<head>
+			<link href="css/dropzone.min.css" rel="stylesheet" />
+			<script src="js/common/dropzone-a.min.js" />
+		</head>
+	</group>
+	
+	<page template="templates/loading.xml" path="">
+		<head>
+			<link href="css/loading.css" rel="stylesheet" />
+			<script src="js/portal/loading.js" />
+		</head>
+	</page>
+
+	<!--首页-->
+	<page template="templates/home.xml" path="home">
+		<head>
+			<script src="js/portal/home.js" />
+		</head>
+	</page>
+
+	<!--注册-->
+	<page template="templates/home.xml" path="register-user">
+		<head>
+			<script src="js/portal/register-user.js" />
+		</head>
+		<load  href="content/portal/register-user.xml"  to="content-container" />
+	</page>
+
+	<!--密码登录-->
+	<page template="templates/home.xml" path="login-by-pwd">
+		<head>
+			<script src="js/portal/login-by-pwd.js" />
+		</head>
+		<load  href="content/portal/login-by-pwd.xml"  to="content-container" />
+	</page>
+
+	<!--手机短信登录-->
+	<page template="templates/home.xml" path="login-by-sms">
+		<head>
+			<script src="js/portal/login-by-sms.js" />
+		</head>
+		<load  href="content/portal/login-by-sms.xml"  to="content-container" />
+	</page>
+
+	<!--修改密码-->
+	<page template="templates/home.xml" path="changePassword">
+		<head>
+			<script src="js/portal/change-password.js" />
+		</head>
+		<load  href="content/portal/change-password.xml"  to="content-container" />
+	</page>
+	
+	<!--个人首页-->
+	<page template="templates/home.xml" path="myProfile">
+		<group  ref="dropzone" />
+		<head>
+			<script src="js/portal/my-profile.js" />
+		</head>
+		<load  href="content/portal/my-profile.xml"  to="content-container" />
+	</page>
+
+	<page template="templates/home.xml" path="myDashboard">
+		<group  ref="dropzone" />
+		<head>
+			<script src="js/portal/my-dashboard.js" />
+		</head>
+		<load  href="content/portal/my-dashboard.xml"  to="content-container" />
+	</page>
+	
+	<!--用户管理-->
+	<page template="templates/home.xml" path="userManage">
+		<group  ref="form" />
+		<group  ref="table" />
+		<head>
+			<script src="js/sys/user-manage.js" />
+		</head>
+		<load  href="content/sys/user-manage.xml"  to="content-container" />
+	</page>
+
+	<!--系统设置页面-->
+	<page template="templates/home.xml" path="setting">
+		<group  ref="form" />
+		<group  ref="table" />
+		<head>
+			<script src="/js/sys/sys-setting.js" />
+		</head>
+	</page>
+	
+	<!--公司管理-->
+	<page template="templates/home.xml" path="company">
+		<group  ref="form" />
+		<group  ref="table" />
+		<head>
+			<script src="/js/sys/company.js" />
+		</head>
+	</page>
+	
+	<page template="templates/home.xml" path="organization">
+		<group  ref="form" />
+		<group  ref="tree" />
+		<head>
+			<script src="/js/sys/organization.js" />
+		</head>
+	</page>
+	
+	<page template="templates/home.xml" path="organImport">
+		<head>
+			<link href="css/bootstrap-fileinput.min.css" rel="stylesheet" />
+			<script src="js/common/bootstrap-fileinput.min.js" />
+			<script src="js/common/xlsx.js" />
+			<script src="js/portal/organ-import.js" />
+		</head>
+		<load  href="content/portal/organ-import.xml"  to="content-container" />
+	</page>
+	
+	<page template="templates/home.xml" path="mysql">
+		<group  ref="form" />
+		<group  ref="table" />
+		<head>
+			<script src="/js/sys/mysql.js" />
+		</head>
+	</page>
+	
+	<resources  dir="images"  path="images" />
+	<resources  dir="css"  path="css" />
+	<resources  dir="js"  path="js" />
+	<resources  dir="fonts"  path="fonts" />
+	<resources  dir="resources"  path="resources"/>
+	
+	<services>
+		
+		<!-- 服务器时间 -->
+		<service path="time" xpipe="http://www.xmlpipe.org/xpe/db/time" method="GET"></service>
+		
+		<!-- 全局userId -->
+        <service path="member/id" xpipe="http://www.xmlpipe.org/xpe/db/id" method="GET" initValue="1001" store="memberId.db"></service>
+
+		<!-- 用户 -->
+		<service path="/user" userdb="users.db" storeType="binary" primaryKey="id"
+		    root="admin" email="bonsai@baipeng.org" password="demo.admin" 
+			secret="msdemo" aesKey="3CCLut8kJhBcCQ0kKwGmSZhhIFLzm74wE7DJMv8lpII=" 
+			assignGroup="admin:63" groups="customer,manager,supervisor"
+		>
+			<get xpipe="http://www.xmlpipe.org/xpe/db/user/validate" />
+			<post xpipe="http://www.xmlpipe.org/xpe/db/user/register" />
+			<post path="/user/password/reset" xpipe="http://www.xmlpipe.org/xpe/db/user/token/reset" />
+			<post path="/user/password/reset/token" xpipe="http://www.xmlpipe.org/xpe/db/user/password/reset/token" />
+			<get path="/user/session" xpipe="http://www.xmlpipe.org/xpe/db/user/session/get" />
+			<post path="/user/session" xpipe="http://www.xmlpipe.org/xpe/db/user/session/update" />
+			<post path="user/session/changepassword" xpipe="http://www.xmlpipe.org/xpe/db/user/session/changepassword" />
+			<get path="user/session/list" xpipe="http://www.xmlpipe.org/xpe/db/user/session/list" />
+			<del path="/user/del" xpipe="http://www.xmlpipe.org/xpe/db/user/admin/del" />
+			<get path="/user/login" xpipe="http://www.xmlpipe.org/xpe/db/user/nonce" />
+			<post path="/user/login" xpipe="http://www.xmlpipe.org/xpe/db/user/login" />
+			<post path="/signoff" xpipe="http://www.xmlpipe.org/xpe/db/user/session/signoff" />
+			<post path="user/group" xpipe="http://www.xmlpipe.org/xpe/db/user/admin/group" />
+			<del path="user/group" xpipe="http://www.xmlpipe.org/xpe/db/user/admin/group" />
+
+			<webSocket path="ws/users" protocol="dbsync" xpipe="http://www.xmlpipe.org/xpe/ms/record" dbProvider="users.db" />
+		</service>
+
+		<service path="/member" store="member.db" storeType="binary" primaryKey="id" seqKey="false" userStore="users.db"
+			dict="id:l,code,name,status,gender:b, birthday:t,birthYear:i,birthMonth:i,birthDate:i,idno,countryId:i,provinceId:i,cityId:i,districtId:i,address,postcode,
+			username,slogan,photoId,nickName,station"
+        	fields="code,name,status,country,province,city,district"
+        	resolve="provinceId->province:sysRegion.db(name),
+        			 cityId->city:sysRegion.db(name),
+        			 districtId->district:sysRegion.db(name)"
+		>
+        	<get path="/member" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/member/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="member" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/member/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" mask='id,code,name,status,gender,birthday,provinceId,cityId,districtId'/>
+	 	</service>
+
+        <service store="company.db" storeType="binary" primaryKey="id" initValue="1" seqKey="true"
+        	dict="id:i,code,name,status,
+        	countryId:i,provinceId:i,cityId:i,districtId:i,address,postcode,contact,contactPhone,contactName,
+        	registedate:t,startdate:t,enddate:t" 
+        	fields="code,name,status,country,province,city,district"
+        	resolve="provinceId->province:sysRegion.db(name),
+        			 cityId->city:sysRegion.db(name),
+        			 districtId->district:sysRegion.db(name)"
+        >
+        	<get path="/db/company" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/db/company/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="/db/company" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/db/company/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" />
+        </service>
+
+        <!--组织-->
+        <service store="organ.db" storeType="binary" primaryKey="id" userStore="users.db"
+        	dict="id:i,parentId:i,companyId:i,code,name,leaf:i,
+        		path,lev:b,lev1:i,lev2:i,lev3:i,lev4:i,lev5:i,lev6:i,lev7:i,lev8:i,lev9:i,
+        		created:t,ownerId:i"
+        	fields="code,parentId,name,lev1,lev2,lev3,lev4,lev5,lev6,lev7,lev8,lev9"
+            resolve="companyId->company:company.db(code,name)" seqKey="true"
+        >
+            <post path="/db/organ" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+            <del path="/db/organ/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+            <get path="/db/organ" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+            <get path="/db/organ/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" 
+            	 mask="id,parentId,path,lev,companyId,code,name,leaf,created,ownerId"/>
+        </service>
+
+        <webSocket path="ws/sys/organ" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sys/organ" />
+	    <service path="api/sys/organ/*" sendTo="ws/sys/organ">
+			<post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+	    </service>
+
+		<!-- 区域服务 -->
+		<service store="sysRegion.db" storeType="binary" primaryKey="id"
+			dict="id,parentId,name,path,leaf:b,lev,lev1,lev2,lev3,lev4,lev5,lev6"
+			fields="parentId"
+		>
+			<get path="/db/sys/region" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/db/sys/region/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="/db/sys/region" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/db/sys/region/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" />
+		</service>
+
+		<!-- 名称映射服务 : 仅供系统人员查询 -->
+		<service store="sysNameMapping.db" storeType="binary" primaryKey="id"
+			dict="id,code,name,fixed:b"
+			fields="code"
+		>
+			<get path="/db/sys/namemap" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/db/sys/namemap/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="/db/sys/namemap" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/db/sys/namemap/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" />
+		</service>
+
+		<!-- 字典服务 -->
+		<service store="sysDictionary.db" storeType="binary" primaryKey="id"
+			dict="id,code,name,namemapId:i,sequence:i"
+			fields="namemapId,code^sequence"
+		>
+			<get path="/db/sys/dictionary" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/db/sys/dictionary/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="/db/sys/dictionary" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/db/sys/dictionary/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" />
+		</service>
+
+		<!-- 系统配置 -->
+		<service store="sysSettings.db" storeType="binary" primaryKey="id" seqKey="true"  
+			dict="id:i,namemapId:i,name,data:j,version" 
+			fields="namemapId" 
+			resolve="namemapId->namemap:sysDictionary.db(code,name)"
+		>
+			<get path="/db/sys/setting" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/get" />
+			<del path="/db/sys/setting/del" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/del" />
+			<post path="/db/sys/setting" xpipe="http://www.xmlpipe.org/xpe/db/unique/record/post" />
+			<get path="/db/sys/setting/sel" xpipe="http://www.xmlpipe.org/xpe/db/search" />
+		</service>
+
+		<!-- 公共文件服务 -->
+		<service path="/image"
+			dict="classNameId,classPK,title,abstract"
+			fields="classNameId,classPK"
+		>
+			<get xpipe="http://www.xmlpipe.org/xpe/ims/get" notify="http://www.xmlpipe.org/xpe/ims/resized" />
+			<del xpipe="http://www.xmlpipe.org/xpe/ims/del" />
+			<async name="resize" xpipe="http://www.xmlpipe.org/xpe/ims/resize" />
+			<get path="images" xpipe="http://www.xmlpipe.org/xpe/ims/search" />
+			<post path="images" xpipe="http://www.xmlpipe.org/xpe/ims/update" />
+		</service>
+
+		<service store="resourceFile.db" userStore="users.db" seqKey="true"  
+			baseDir="files" resourceDir="files" imagesDir="images" 
+			dict="classNameId,classPK,title,abstract"
+			fields="classNameId,classPK"
+		>
+            <post path="/resource/file/upload" xpipe="http://www.xmlpipe.org/xpe/ims/resource/upload" />
+            <post path="/resource/file/update" xpipe="http://www.xmlpipe.org/xpe/ims/resource/update" />
+            <get path="/resource/file" xpipe="http://www.xmlpipe.org/xpe/ims/resource/get" />
+            <get path="/resource/file/view" xpipe="http://www.xmlpipe.org/xpe/ims/resource/view" />
+            <get path="/resource/file/search" xpipe="http://www.xmlpipe.org/xpe/ims/resource/search" />
+            <del path="/resource/file/del" xpipe="http://www.xmlpipe.org/xpe/ims/resource/del" />
+        </service>
+
+       <!-- 系统初始化服务  -->
+        <webSocket path="ws/sys/init/region" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sys/init/region" />
+	    <service path="api/sys/init/region" sendTo="ws/sys/init/region">
+			<post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+	    </service>
+	
+        <webSocket path="ws/sys/init/dictionary" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sys/init/dictionary" />
+	    <service path="api/sys/init/dictionary" sendTo="ws/sys/init/dictionary">
+			<post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+	    </service>
+	    
+        <webSocket path="ws/sys/init/name/mapping" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sys/init/name/mapping" />
+	    <service path="api/sys/init/name/mapping" sendTo="ws/sys/init/name/mapping">
+			<post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+	    </service>
+	    
+        <!-- SMS 服务  -->
+        <webSocket path="ws/sms" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sms" />
+	    <service path="api/sms/*" sendTo="ws/sms">
+			<post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+			<get xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+	    </service>
+	    
+        <!-- SQL 操作服务  -->
+        <webSocket path="ws/sql" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ws/sql" />
+        <service path="api/sql/*" sendTo="ws/sql" userStore="users.db">
+            <post xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+            <get  xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+        </service>
+
+	</services>
+</site>

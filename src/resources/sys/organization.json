@@ -1,0 +1,70 @@
+{
+	name: "组织架构",
+	url : "/db/organ",
+	fields: {
+		id: {
+			title: "ID",
+			disabled: true,
+			hide: true,
+			validators: {
+				notEmpty: {
+					message: "编号不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "编号只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		code: {
+			title: "编号",
+			validators: {
+				notEmpty: {
+					message: "编码不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "编码只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		name: {
+			title: "名称",
+			validators: {
+				notEmpty: {
+					message: "名称不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "名称只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		companyId: {
+			title: "公司名称",
+			validators: {
+				notEmpty: {
+					message: "名称不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "名称只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		parentId: {title: "上级",
+			input :"parent",
+			hide: true,
+			validators: {
+				notEmpty: {
+					message: "父级不能为空"
+				},
+				regexp: {
+					regexp: /^[0-9]/,
+					message: "父级只能数字"
+				}
+			}
+		},
+		leaf: {title: "叶级"},
+	}
+}

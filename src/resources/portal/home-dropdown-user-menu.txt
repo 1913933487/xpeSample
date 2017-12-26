@@ -1,0 +1,35 @@
+<div class="pad-all bord-btm">
+	<div class="widget-header bg-warning text-center">
+		<h3 id="ctx-name" class="mar-no pad-top"><%= member && member.name ? member.name: '您的姓名'%></h3>
+		<p id="ctx-station" class="mar-btm mar-all"><%=member && member.station ? member.station: '您的职位'%></p>
+	</div>
+	
+	<div id="ctx-photo" class="widget-body">
+	<%if (member && member.photoId) {%>
+		<img id="im-replace" class="widget-img img-circle img-border-light" src="/resource/file?id=<%=member.photoId%>" />
+		<%} else {%>
+		<i id="im-replace" class="widget-img img-circle img-border-light text-center ti-user text-4x bg-info"></i>
+		<%}%>
+	</div>
+	
+	<div class="text-center text-overflow" style="max-width:16em">
+		<p id='ctx-slogan'><%=member && member.slogan ? member.slogan : '个性签名'%></p>
+	</div>
+</div>
+<ul class="head-list">
+	<li>
+		<a href="/myProfile">
+			<i class="fa fa-laptop icon-lg"></i> 我的首页
+		</a>
+	</li>
+	<li>
+		<a href="/changePassword">
+			<i class="fa fa-key icon-lg"></i> 修改密码
+		</a>
+	</li>
+</ul>
+<div class="pad-all text-right">
+	<a href="javascript:X.pub('doLogout');" class="btn btn-primary">
+		<i class="fa fa-chain-broken"></i> 退出登录
+	</a>
+</div>

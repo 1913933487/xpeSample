@@ -1,0 +1,34 @@
+<content>
+<div class="cls-content">
+	<div id="content-wrapper-panel" class="cls-content-sm panel">
+		<div class="panel widget bord-no">
+			<div class="widget-header bg-warning text-center">
+				<h3 id="my-name" class="mar-no pad-top">您的姓名</h3>
+				<p id="my-station" class="mar-btm mar-all">您的职位</p>
+			</div>
+			
+			<div id="my-photo" class="widget-body">
+				<i id="im-replace" class="widget-img img-circle img-border-light text-center ti-user text-4x bg-info"></i>
+			</div>
+
+			<div class="panel pad-all widget bord-no">
+				<form id="fm-profile" onsubmit="return false">
+					<div class="form-group">
+						<input type="text" id="name" name="name" class="form-control" placeholder="名称" autofocus="true" />
+					</div>
+					<div class="form-group">
+						<input type="text" id="station" name="station" class="form-control" placeholder="职位" autofocus="true" />
+					</div>
+					<div class="form-group">
+						<input type="text" id="slogan" name="slogan" class="form-control" placeholder="个性签名" autofocus="true" />
+					</div>
+					<button id="btn-slogan" class="btn btn-primary btn-lg btn-block" type="submit">更新</button>
+				</form>
+				<div class="panel-body bord-no">
+					<div id='update-photo'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</content>

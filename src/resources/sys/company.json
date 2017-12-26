@@ -1,0 +1,66 @@
+{
+	name: "公司",
+	url : "/db/company",
+	fields: {
+		id: {title: "ID"},
+		code: {
+			title: "编号",
+			validators: {
+				notEmpty: {
+					message: "编码不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "编码只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		name: {
+			title: "名称",
+			validators: {
+				notEmpty: {
+					message: "名称不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "名称只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		
+		status: {
+			input: "selector",
+			options : [{code:'0',name:'草稿'},{code:'1',name:'申请中'}],
+			title: "状态",
+		},
+		
+		country: {title: "国家"},
+		provinceId: {
+			input:"address",
+			title: "省级",
+			validators: {
+				notEmpty: {
+					message: "省级不能为空"
+				}
+			}
+		},
+		cityId: {
+			input:"address",
+			title: "城市",
+			validators: {
+				notEmpty: {
+					message: "城市不能为空"
+				}
+			}
+		},
+		districtId: {input:"address",title: "区域"},
+		address: {title: "详细地址"},
+		postcode: {title: "邮编"},
+		contact: {title: "联系人"},
+		contactphone: {title: "联系人电话"},
+		contactname: {title: "联系人姓名"},
+		registedate: {title: "注册日期",input: "date"},
+		startdate: {title: "开始日期",input: "date"},
+		enddate: {title: "结束日期",input: "date"}
+	}
+}

@@ -1,0 +1,110 @@
+<project default="all" basedir=".">
+	<target name="init">
+        <property name="mode" value="" />
+        <property name="O" value="0" />
+		<property name="name" value="app" />
+		<echo message="Building ${name}" />
+		<property name="src" value="./src" />
+		<property name="builds.dir" value="./builds" />
+		<property name="build.src" value="./build" />
+		<property name="build.dir" value="./build/site" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Prepares the build directory                                        -->
+	<!-- =================================================================== -->
+	<target name="prepare" depends="init">
+		<!-- create directories -->
+		<echo message="Preparing the build directories" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.src}" />
+		<mkdir dir="${builds.dir}" />
+		<delete dir="${build.src}/ms" />
+	</target>
+
+
+	<!-- =================================================================== -->
+	<!-- Prepares the source code                                            -->
+	<!-- =================================================================== -->
+	<target name="prepare-src" depends="prepare">
+		<!-- copy src files -->
+		<copy todir="${build.dir}">
+			<fileset dir="${src}"  excludes="content/**,sitemap.xml,ms/**,templates/**" />
+		</copy>
+		
+
+		<copy todir="${build.src}">
+			<fileset dir="${src}"  includes="content/**,ms/**,sitemap.xml,templates/**"/>
+		</copy>
+
+	</target>
+
+
+	<available file=".git" type="dir" property="git.present" />
+
+	<target name="git.revision" description="Store git revision in ${repository.version}" if="git.present">
+		<exec executable="git" outputproperty="git.revision" failifexecutionfails="false" errorproperty="">
+            <arg value="-domain" />
+            <arg value="${domain}" />
+			<arg value="describe" />
+			<arg value="--tags" />
+			<arg value="--always" />
+			<arg value="HEAD" />
+		</exec>
+		<condition property="repository.version" value="${git.revision}" else="unknown">
+			<and>
+				<isset property="git.revision" />
+				<length string="${git.revision}" trim="yes" length="0" when="greater" />
+			</and>
+		</condition>
+	</target>
+
+
+	<target name="buildNumber" depends="prepare-src">
+		<propertyfile comment="Build Information" file="build.number">
+			<entry key="build.date" type="date" pattern="yyyy-MM-dd'T'HH:mm:ss" value="now" />
+		</propertyfile>
+		<buildnumber file="build.number" />
+	</target>
+
+	<target name="about" depends="git.revision,prepare-src,buildNumber">
+		<loadproperties srcFile="build.number" />
+		<replace file="${build.src}/content/aboutSite.xml" token="@buildNumber@" value="${build.number}" />
+		<replace file="${build.src}/content/aboutSite.xml" token="@buildDate@" value="${build.date}" />
+		<replace file="${build.src}/content/aboutSite.xml" token="@revision@" value="${git.revision}" />
+        <replace file="${build.src}/sitemap.xml" token="@mode@" value="${mode}" />
+	</target>
+
+	<target name="sitec" depends="about">
+		<exec executable="sitec" failifexecutionfails="true" failonerror="true"  dir="${build.src}" logError="true">
+            <arg value="-domain" />
+            <arg value="${domain}" />
+            <arg value="-O" />
+            <arg value="${O}" />
+            <arg value="-in" />
+            <arg value="sitemap.xml" />
+		</exec>
+	</target>
+
+
+	<target name="package" depends="sitec">
+		<echo message="Creating the xar file ${build.src}/${name}.xar" />
+		<jar jarfile="${build.src}/${name}.xar" basedir="${build.dir}" includes="**/*" />
+	</target>
+
+	<target name="all" depends="package,buildNumber" />
+	
+	<target name="prod" depends="clean,sitec" >
+		<jar jarfile="${builds.dir}/${domain}_${build.number}.xar" basedir="${build.dir}" includes="**/*" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Clean targets                                                       -->
+	<!-- =================================================================== -->
+	<target name="clean" depends="init">
+		<delete dir="${build.dir}" />
+		<delete dir="${build.src}" />
+	</target>
+
+
+</project>

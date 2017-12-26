@@ -1,0 +1,61 @@
+{
+	name: "系统设置",
+	url : "/db/sys/setting",
+	fields: {
+		id: {
+			title: "ID",
+			disabled: true,
+			validators: {
+				notEmpty: {
+					message: "编号不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "编号只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		namemapId: {
+			title: "编号",
+			validators: {
+				notEmpty: {
+					message: "编号不能为空"
+				},
+				regexp: {
+					regexp: /^[0-9]/,
+					message: "编码只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		name: {
+			title: "名称",
+			validators: {
+				notEmpty: {
+					message: "名称不能为空"
+				},
+				regexp: {
+					regexp: /^[A-Za-z0-9\u4e00-\u9fa5]+$/,
+					message: "名称只能输入中文、数字和英文组成"
+				}
+			}
+		},
+		data: {
+			title: "配置内容",
+			input: "textarea",
+			rows: 13,
+			validators: {
+				notEmpty: {
+					message: "配置内容不能为空"
+				}
+			}
+		},
+		version: {
+			title: "版本",
+			validators: {
+				notEmpty: {
+					message: "版本不能为空"
+				}
+			}
+		}
+	}
+}

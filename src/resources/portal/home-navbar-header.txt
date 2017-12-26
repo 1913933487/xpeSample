@@ -1,0 +1,6 @@
+<a href="#" class="navbar-brand">
+	<img src="images/logo.png" alt="Logo" class="brand-icon" />
+	<div class="brand-title">
+		<span class="brand-text">瑞博龙科技</span>
+	</div>
+</a>
